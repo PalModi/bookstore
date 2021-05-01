@@ -1,0 +1,19 @@
+#main_bg {
+    background-color: whitesmoke;
+}
+.greenyellow {
+    border-color: #abbd38!important;
+}
+
+.center {
+    text-align: center;
+}
+
+.contacthover:hover {
+    background-color: #abbd38!important;
+}
+
+.ak {
+    align-content: flex-end;
+}
+
