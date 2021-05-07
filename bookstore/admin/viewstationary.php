@@ -116,7 +116,7 @@
                                             <tr>
                                             
                                                 <td><?php echo $row['stationary_name']?></td>
-                                                <td><img src="<?php echo 'http://localhost/bookstore/'.$row['stationary_pic']?>" width="50" height="50"></td>
+                                                <td><img src="<?php echo 'http://localhost/bookstore/bookstore/'.$row['stationary_pic']?>" width="50" height="50"></td>
                                                 <td><?php echo $row['descryption']?></td>
                                                 <td><?php echo $row['price']?></td>
                                                 <td><?php echo $row['Brand']?></td>
@@ -140,7 +140,6 @@
         </div>
             
             <!-- /. PAGE WRAPPER  -->
-        </div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

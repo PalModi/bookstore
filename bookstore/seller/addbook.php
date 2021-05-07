@@ -50,7 +50,7 @@
                 </li>
                 
                 <li class="active">
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Manage Staionary</a>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Manage Stationary</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
                             <a href="addstationary.php">Add Stationary</a>

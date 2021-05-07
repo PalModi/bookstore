@@ -98,45 +98,59 @@
                               <div>
                             <div>
                               <div class="row">
-                                <!--comment <?php 
-                                    // $qry1="SELECT * FROM user_tbl WHERE id=$s_id";
-                                    // $rs1=mysqli_query($conn,$qry1);
-                                    // if(mysqli_num_rows($rs1)>0)
-                                    // {
-                                    //     while($row1=mysqli_fetch_assoc($rs1))
-                                    //     {
-                                ?> end here-->
+                                <?php 
+                                    $qry1="SELECT * FROM user_tbl WHERE user_name='$user_name' ";
+                                    $rs1=mysqli_query($conn,$qry1);
+                                
+                                    $row1=mysqli_fetch_assoc($rs1);
+                                ?> 
 
                                 <div class=" col-md-12 col-lg-12 "> 
                                   <table align="center" class="table table-striped table-bordered table-hover">
                                     <tbody>
                                         <tr>
-                                            <th>Name</th>
-                                            <td>Pal Modi</td>
-                                            <!-- <td><?php echo $row1['firstname']?></td> -->
+                                            <th>First Name</th>
+                                            <!-- <td>Pal Modi</td> -->
+                                            <td><?php echo $row1['f_name']?></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Last Name</th>
+                                            <!-- <td>Pal Modi</td> -->
+                                            <td><?php echo $row1['l_name']?></td>
+                                        </tr>
+                                        <tr>
+                                            <th>User Name</th>
+                                            <!-- <td>Pal Modi</td> -->
+                                            <td><?php echo $row1['user_name']?></td>
                                         </tr>
                                         
-                                        <tr>
+                                        <!-- <tr>
                                             <th>Gender</th>
-                                            <td>Male</td>
-                                            <!-- <td><?php echo $row1['gender']?></td> -->
-                                        </tr>
-                                        <tr>
+                                             <td>Male</td> 
+                                            <td><?php echo $row1['gender']?></td>
+                                        </tr> -->
+                                        <!-- <tr>
                                             <th>Home Address</th>
                                             <td>Shivanta</td>
-                                            <!-- <td><?php echo $row1['address']?></td> -->
-                                        </tr>
+                                             <td><?php echo $row1['address']?></td>
+                                        </tr> -->
                                         <tr>
                                             <th>Email</th>
-                                            <td>palmodi@gmail.com</td>
-                                            <!-- <td><a href="mailto:info@support.com"><?php echo $row1['email']?></a></td> -->
+                                            <!-- <td>palmodi@gmail.com</td> -->
+                                            <td><?php echo $row1['email']?></td>
                                         </tr>
                                         <tr>
                                             <th>Phone Number</th>
-                                            <td>9638355713</td>
-                                            <!-- <td><?php echo $row1['mobilenum']?></td> -->
+                                            <!-- <td>9638355713</td> -->
+                                            <td><?php echo $row1['m_no']?></td>
 
                                         </tr>
+                                        <tr>
+                                            <th>City</th>
+                                            <td><?php echo $row1['city']?></td>
+
+                                        </tr>
+
                                         
                                     </tbody>
                                   </table>
@@ -149,6 +163,9 @@
                         </div>
                             </div>    
                             </div>
+                            <!-- <?php
+                            
+                        ?> -->
         </div>
             </div>
         </div>

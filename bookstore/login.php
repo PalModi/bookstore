@@ -15,8 +15,16 @@
         $un="";
         $ps="";
     }
-?>
+    // if(isset($_REQUEST['stationary_id']))
+    // {
+    //     echo "stationary";
+    // }
+    // elseif(isset($_REQUEST['book_id']))
+    // {
+    //     echo "book";
+    // }
 
+?>
 
 <html>
     <head>
@@ -33,7 +41,6 @@
         <link rel="stylesheet" href="css/color.css" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     </head>
-    <body>
 
 
     <body id="main_bg">
@@ -49,7 +56,28 @@
                  <div class="card">
                           <div class="card-body">
                               <h3 class="card-title mb-3">Login here</h3>
-                              <form action="check.php" method="POST">
+                              <?php
+                              if(isset($_REQUEST['stationary_id']))
+                               {
+                                    $stationary_id=$_REQUEST['stationary_id'];
+                                   ?>
+                              <form action="check.php?stationary_id='$stationary_id'" method="POST">
+                              <?php
+                               }
+                               elseif(isset($_REQUEST['book_id']))
+                                    {
+                                        $book_id=$_REQUEST['book_id'];
+                                        ?>
+                                        <form action="check.php?book_id='$book_id'" method="POST">
+                                        <?php
+                               }
+                               else
+                                    {
+                                        ?>
+                                        <form action="check.php" method="POST">
+                                        <?php
+                                    }
+                                        ?>
                                 <div class="mb-3">
                                     <label class="form-label">Username</label>
                                     <input type="text" name="user_name" class="form-control"  placeholder="Name">
@@ -79,9 +107,9 @@
                 <img src="images/login.jpg" alt="" width="100%" height="80%" /> 
             </div>
         </div>
-
-
-
+    <?php
+        // echo $id;
+?>
 
     </div>
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php
+    require 'dbconnect.php';
     session_start();
 ?>
 
@@ -21,6 +22,80 @@
     <body  id="main_bg">
     <?php 
         require 'header.php'; 
+        $book_id=$_REQUEST['book_id'];
     ?>
+    <div class="container">
+        <div class="row">
+                 <div class="col-6" style="height: 580px;">
+                    <img src="images/login.jpg" alt="" width="100%" height="80%" /> 
+                </div>
+                 <div class="col-6">
+
+                 <!-- <h1>Login Form</h1> -->
+                 <div class="card" style="height: 465px;">
+
+
+                     <!-- <div class="card" style="width: 18rem;"> -->
+                     <?php
+                        $qry="SELECT * FROM book_tbl WHERE book_id='$book_id'";
+                        $rs=mysqli_query($conn,$qry);
+                        
+                        if (mysqli_num_rows($rs)>0) 
+                         {
+                            $row=mysqli_fetch_assoc($rs);
+                            $qry2="SELECT seller_id FROM book_tbl WHERE book_id='$book_id'";
+                            $rs2=mysqli_query($conn,$qry2);
+                            $row2=mysqli_fetch_assoc($rs2);
+                            $seller_id=$row2['seller_id'];;
+                            $qry3="SELECT * FROM seller_tbl WHERE seller_id='$seller_id'";
+                            $rs3=mysqli_query($conn,$qry3);
+                            $row3=mysqli_fetch_assoc($rs3); 
+                         }
+                        
+                        ?> 
+                                
+
+                          <div class="card-body">
+                            <h3 class="card-title"><?php echo $row['book_name'];?></h3>
+                            <h5 class="card-text"> By <?php echo $row3['f_name']; echo ' '; echo $row3['l_name']?></h5> 
+                            <p class="card-text"><?php echo $row['descryption'];?></p>
+                          </div>
+                          
+                          <div class="card-body">
+                            <p>Rs. <?php echo $row['price'];?> </p>
+                          </div>
+                          <?php
+                          if(isset($_SESSION['user_name']))
+                          {
+
+                            ?>
+                            <a class="btn btn-primary" href="cardbookprocess.php?book_id=<?php echo $row['book_id'];?>" onclick="myFunction()">Buy Now</a>
+                           <!-- <a class="btn btn-primary" href="cart.php?book_id=<?php echo $row['book_id'];?>" role="button">View Cart</a> -->
+                          
+                          <?php
+                          }
+                          else
+                          {
+                            ?>
+                            <a class="btn btn-primary" href="cardbookprocess.php?book_id=<?php echo $row['book_id'];?>" onclick="errorFunction()">Buy Now</a>
+                          <?php
+                          }
+                          ?>
+                            </div>
+                      </div>
+                </div>
+        </div>
+    </div>
+      <script>
+    function myFunction() {
+    alert("Book Succesfully purchased");
+      }
+    </script>
+    <script>
+       function errorFunction() {
+       alert("Login first");
+            }
+</script>
+
     </body>
 </html>

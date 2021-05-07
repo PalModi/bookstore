@@ -115,7 +115,7 @@
                                             <tr>
                                                 
                                                 <td><?php echo $row['book_name']?></td>
-                                                <td><img src="<?php echo 'http://localhost/bookstore/'.$row['book_pic']?>" width="50" height="50"></td>
+                                                <td><img src="<?php echo 'http://localhost/bookstore/bookstore/'.$row['book_pic']?>" width="50" height="50"></td>
                                                 <td><?php echo $row['descryption']?></td>
                                                 <td><?php echo $row['price']?></td>
                                                 <td><?php echo $row['publisher']?></td>

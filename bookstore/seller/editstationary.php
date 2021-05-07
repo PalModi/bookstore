@@ -50,7 +50,7 @@
                 </li>
                 
                 <li class="active">
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Manage Staionary</a>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Manage Stationary</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
                             <a href="addstationary.php">Add Stationary</a>
@@ -85,7 +85,7 @@
                         <div class="col-md-8">
                             <div>
                             <div>
-                                <form class="form-horizontal" method="post" action="addstationaryprocess.php" enctype="multipart/form-data">
+                                <form class="form-horizontal" method="post" action="editstationaryprocess.php?stationary_id=<?php echo $stationary_id;?>" enctype="multipart/form-data">
                                   <div class="form-group">
                                     
                                     <input type="hidden" class="form-control" name="seller_id" value="<?php echo $s_id;?>">

@@ -99,7 +99,7 @@
 
                                 </div>
                             </div>
-                          </div>
+                          
 
                             <div class="row">
                                 <div class="col-6">
@@ -132,6 +132,7 @@
                               </form>
                               
                           </div>
+                      </div>
                       </div>
             <div class="col-6">
                 <img src="images/register.jpg" alt="" width="100%" height="80%" /> 

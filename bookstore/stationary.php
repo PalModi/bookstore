@@ -35,12 +35,10 @@
         ?>
                         <div class="col-lg-4 col-md-4 col-sm-6">
                             
-                                                            
-
                         <div class="card" style="width: 18rem;">
                                  <!-- <img class="card-img-top" src="images/banner1.jpg" alt="Card image cap"> -->
-                                 <a href="shopbook.phpid=<?php echo $row['id'];?>"><img class="card-img-top" src="<?php echo $row['stationary_pic'];?>" alt="<?php echo $row['book_name']; ?>"></a> 
-
+                                 <a href="shopstationary.php?stationary_id=<?php echo $row['stationary_id'];?>"><img class="card-img-top" src="<?php echo $row['stationary_pic'];?>" alt="<?php echo $row['stationary_name']; ?>"></a> 
+                                         
                                  <div class="card-body">
                                    <h5 class="card-title"><?php echo $row['stationary_name'];?></h5>
                                    <p class="card-text"><?php echo $row['descryption'];?></p>

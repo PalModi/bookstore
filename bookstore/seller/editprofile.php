@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+require '../dbconnect.php';
+    $user_name=$_GET['user_name'];
+?>
 <html>
 
 <head>
@@ -50,7 +54,7 @@
                 </li>
                 
                 <li class="active">
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Manage Staionary</a>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Manage Stationary</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
                             <a href="addstationary.php">Add Stationary</a>
@@ -63,89 +67,138 @@
             </ul>
         </nav>
 
-        <!-- CHECKING IF LOGIN IS DONE OR NOT  -->
-        <!--comment <?php
-            // if(!isset($_SESSION['s_fn']))
-            // {
-            //     header("location:index.php");
-            // }
-            // $user=$_SESSION["s_fn"];
-            //echo "Welcome".$user;
-        ?> end here-->
-        <!-- /. SIDEBAR MENU (navbar-side) -->
-
-        <div id="content">
-            <div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1>My Profile</h1>
-                    </div>
-                </div>
-
-                
-                <div class="row">
-                    <div class="col-md-11">
-                        <div>
-                           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
 
 
-                              <div>
-                            <div>
-                              <div class="row">
-                                <!--comment <?php 
-                                    // $qry1="SELECT * FROM user_tbl WHERE id=$s_id";
-                                    // $rs1=mysqli_query($conn,$qry1);
-                                    // if(mysqli_num_rows($rs1)>0)
-                                    // {
-                                    //     while($row1=mysqli_fetch_assoc($rs1))
-                                    //     {
-                                ?> end here-->
 
-                                <div class=" col-md-12 col-lg-12 "> 
-                                  <table align="center" class="table table-striped table-bordered table-hover">
-                                    <tbody>
-                                        <tr>
-                                            <th>Name</th>
-                                            <td>Pal Modi</td>
-                                            <!-- <td><?php echo $row1['firstname']?></td> -->
-                                        </tr>
-                                        
-                                        <tr>
-                                            <th>Gender</th>
-                                            <td>Male</td>
-                                            <!-- <td><?php echo $row1['gender']?></td> -->
-                                        </tr>
-                                        <tr>
-                                            <th>Home Address</th>
-                                            <td>Shivanta</td>
-                                            <!-- <td><?php echo $row1['address']?></td> -->
-                                        </tr>
-                                        <tr>
-                                            <th>Email</th>
-                                            <td>palmodi@gmail.com</td>
-                                            <!-- <td><a href="mailto:info@support.com"><?php echo $row1['email']?></a></td> -->
-                                        </tr>
-                                        <tr>
-                                            <th>Phone Number</th>
-                                            <td>9638355713</td>
-                                            <!-- <td><?php echo $row1['mobilenum']?></td> -->
 
-                                        </tr>
-                                        
-                                    </tbody>
-                                  </table>
-                                        
-                                </div>            
+        <div class="container">
+        <div class="row">
+            <div class="col-12">
+                 <div class="card">
+                          <div class="card-body">
+                              <h3 class="card-title mb-3">Register here</h3>
+                              <form action="editprofileprocess.php" method="POST">
+                              <?php 
+                                    $qry1="SELECT * FROM user_tbl WHERE user_name='$user_name'";
+                                    $rs1=mysqli_query($conn,$qry1);
+                                    $row=mysqli_fetch_assoc($rs1);
+                                    // echo '<pre>';print_r($row1);exit;
+                                ?> 
+                                  <div class="row"> 
+                                      <div class="col-6">
+                                              <div class="mb-6">
+                                             <label class="form-label">First Name</label>
+                                            <input type="text" name="fname" class="form-control" value="<?php echo $row['f_name']; ?>">
+                                             <div class="invalid-feedback">
+                                              Please enter First name
+                                             </div>
+                                              </div>  
+                                      </div>
+                                      <div class="col-6">
+                                                  <div class="mb-6">
+                                               <label class="form-label">Last Name</label>
+                                               <input type="text" name="lname" class="form-control"  value="<?php echo $row['l_name']; ?>">
+                                               <div class="invalid-feedback">
+                                                   Please enter Last name
+                                                </div>
+                                          </div>  
+                                      </div>
+                                  </div>
+                                  
+                                  
+                            <div class="row">
+                                <div class="col-6">
+                                        <div class="mb-3">
+                                            <label class="form-label">Username</label>
+                                            <input type="text" name="user_name" class="form-control"  value="<?php echo $row['user_name']; ?>">
+                                            <div class="invalid-feedback">
+                                                Please enter username First
+                                            </div>
+                                          </div>
                                 </div>
-                                        
+                                <div class="col-6">
+
+                                       <div class="mb-3">
+                                           <label class="form-label">City</label>
+                                           <input type="text" name="city" class="form-control"  value="<?php echo $row['city']; ?>">
+                                           <div class="invalid-feedback">
+                                               Please enter CIty First
+                                           </div>
+                                         </div>
+
+
                                 </div>
-                                </div>
-                        </div>
-                            </div>    
                             </div>
+                            <div class ="row">
+                            <div class="col-6">
+
+                                       <div class="mb-3">
+                                           <label class="form-label">Phone No.</label>
+                                           <input type="number" name="phone" class="form-control"  value="<?php echo $row['m_no']; ?>">
+                                           <div class="invalid-feedback">
+                                               Please enter mobile no. 
+                                           </div>
+                                         </div>
+
+
+                                </div>
+                                 <div class="col-6">
+
+                                       <div class="mb-3">
+                                           <label class="form-label">Email</label>
+                                           <input type="email" name="email" class="form-control"  value="<?php echo $row['email']; ?>">
+                                           <div class="invalid-feedback">
+                                               Please enter email id. 
+                                           </div>
+                                         </div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-6">
+
+                                          <div class="mb-3">
+                                          <label class="form-label">Password</label>
+                                          <input type="password" name="password" class="form-control" value="<?php echo $row['password']; ?>">
+                                          <div class="invalid-feedback">
+                                              Please enter password 
+                                          </div>
+                                        </div>
+
+
+                                </div>
+                                <!-- <div class="col-4">
+                                         <div class="mb-3">
+                                             <label class="form-label">Confirm Password</label>
+                                             <input type="password" name="cpassword" class="form-control" value="<?php echo $row['f_name']; ?>">
+                                             <div class="invalid-feedback">
+                                                 Please enter password 
+                                             </div>
+                                           </div>
+                                </div> -->
+                            </div>
+          
+                                  <div class="col-12">
+                                    <button type="submit" class="btn btn-primary">Register</button>
+                                  </div>
+
+                              </form>
+                              
+                          </div>
+                      </div>
         </div>
-            </div>
-        </div>
+
+
+
+
+    </div>
+
+
+
+
+
 
 
       </div>

@@ -35,7 +35,15 @@ $ps=$_POST['password'];
 	{
 		$row=mysqli_fetch_assoc($rs);
 		$_SESSION['user_name']=$row['user_name'];
-		header("location:index.php");
+		if(isset($_REQUEST['stationary_id']))
+		{
+			$stationary_id=$_REQUEST['stationary_id'];
+			header("location:cardstationaryprocess.php?stationary_id=$stationary_id");
+			// href="cardstationaryprocess.php?stationary_id=<?php echo $row['stationary_id'];
+		}
+		else{
+			header("location:index.php");
+		}
 		exit();	
 	}
 	else

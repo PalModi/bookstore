@@ -35,7 +35,7 @@
 
             <ul class="list-unstyled components ">
                 <li>
-                    <a href="#">Dashboard</a>
+                    <a href="dashboard.php">Dashboard</a>
                 </li>
                 <li class="active">
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Manage Books</a>
@@ -90,6 +90,7 @@
                                             <th>Last Name</th>
                                             <th>Email</th>
                                             <th>Mobile</th>
+                                            <th>Remove</th>
                                         </tr>
 
                                         </thead>
@@ -112,6 +113,7 @@
                                             <td><?php echo $row['l_name']; ?></td>
                                             <td><?php echo $row['email']; ?></td>
                                             <td><?php echo $row['m_no']; ?></td>
+                                            <td><a href="deleteseller.php?user_name=<?php echo $row['user_name'] ?>">remove</a></td>
                                         </tr>
                                         <?php
                                                     }

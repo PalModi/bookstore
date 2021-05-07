@@ -16,7 +16,7 @@ $ps=$_POST['password'];
 	$row=mysqli_fetch_assoc($rs);
 	$_SESSION['user_name']=$row['user_name'];
 	//$
-	header("location:index.php");
+	header("location:../index.php");
 	exit();	
 	}
 	else

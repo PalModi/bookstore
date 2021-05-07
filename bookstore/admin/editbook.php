@@ -107,7 +107,7 @@
                                     <input type="file" class="form-control" name="bookToUpload" required> <br><br>
                                     <label> Book Description </label>
     
-                                    <textarea rows="4" cols="70" class="form-control" name="book_desc" value="<?php echo $row['book_desc']; ?>"> </textarea> <br><br>
+                                    <textarea rows="4" cols="70" class="form-control" name="book_desc" value="<?php echo $row['descryption']; ?>"> </textarea> <br><br>
                                     <label for="exampleInputEmail1">Publisher</label>
                                     <input type="text" class="form-control" id="exampleInputEmail1" name="publisher" value="<?php echo $row['publisher']; ?>" required/><br>
 

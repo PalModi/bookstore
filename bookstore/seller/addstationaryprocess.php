@@ -4,7 +4,8 @@ session_start();
 //var_dump($_POST);
 
 $stationary_name=$_POST['stationary_name'];
-$stationaryToUpload=$_POST['stationaryToUpload'];
+// $stationaryToUpload=$_POST['stationaryToUpload'];
+// echo "$stationaryToUpload";
 $statioarny_desc=$_POST['statioarny_desc'];
 $brand=$_POST['brand'];
 $stationary_price=$_POST['stationary_price'];
@@ -13,12 +14,13 @@ $stationary_price=$_POST['stationary_price'];
 //echo '<pre>';print_r($_POST);exit;
 //checks usertype
 
-	$qry="SELECT * FROM stationary_tbl WHERE stationnary_name='".$stationary_name."'";
+	$qry="SELECT * FROM stationary_tbl WHERE stationary_name='".$stationary_name."'";
 	//echo $qry;
 	$rs=mysqli_query($conn,$qry);
 	if(mysqli_num_rows($rs)>0)
 	{
 	$row=mysqli_fetch_assoc($rs);
+  
 	// $_SESSION['user_name']=$row['user_name'];
 	//$
 	header("location:viewstationary.php");
@@ -43,7 +45,7 @@ $stationary_price=$_POST['stationary_price'];
         }
 
         $sql = "INSERT INTO `stationary_tbl`(`stationary_name`, `seller_id`, `stock`, `descryption`, `availability`, `stationary_pic`, `price`, `Brand`) 
-        VALUES ('$stationary_name','0','1','$statioarny_desc','','$target_file','$stationary_price','$brand')";
+        VALUES ('$stationary_name','1','1','$statioarny_desc','','$target_file','$stationary_price','$brand')";
         
         if (mysqli_query($conn, $sql)) {
           echo "New record created successfully";

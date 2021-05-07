@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<?php
+    require '../dbconnect.php';
+    // $user_name = (isset($_SESSION["user_name"])) ? $_SESSION["user_name"] : '';
+    // echo $user_name;
+?>
 <html>
 
 <head>
@@ -50,7 +55,7 @@
                 </li>
                 
                 <li class="active">
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Manage Staionary</a>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Manage Stationary</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
                             <a href="addstationary.php">Add Stationary</a>
@@ -66,12 +71,18 @@
         <!-- Page Content  -->
         <div id="content">
             <div>
-                <div">
+                <div>
+                <?php
+               $qry="SELECT * FROM `user_tbl` WHERE user_type='1'";
+                  $rs = mysqli_query($conn,$qry);
+                  $row=mysqli_fetch_assoc($rs);
+
+
+                  ?>    
                     <div class="row">
                         <div class="col-md-12">
-                            <h1>Dashboard-
-                                <!-- <?php echo $user; ?> -->
-                            </h1>
+                            <h1>Dashboard
+                            <!-- <?php echo $row['f_name']; echo " "; echo $row['l_name'] ?>  -->
                         </div>
                     </div>
 
@@ -99,26 +110,25 @@
 
                                         </thead>
                                     <tbody>
-
-                                    <!--comment <?php
-                                            if (mysqli_num_rows($rs)>0) 
+                                    <?php
+                                        $qry="SELECT * FROM `user_tbl` WHERE user_type='2'";
+                                        $rs = mysqli_query($conn,$qry);
+                                        if (mysqli_num_rows($rs)>0)
                                             {
-                                                while ($row=mysqli_fetch_assoc($rs)) 
-                                                {
-                                                    if($row['usertype']==2)
-                                                    {
+                                             while ($row=mysqli_fetch_assoc($rs)) 
+                                            {
                                         ?>
-                                    <tr>
-                                            <td><?php echo $row['firstname']; ?></td>
-                                            <td><?php echo $row['lastname']; ?></td>
-                                            <td><?php echo $row['email']; ?></td>
-                                            <td><?php echo $row['mobilenum']; ?></td>
+                                        <tr>
+                                        <td><?php echo $row['f_name']; ?></td>
+                                        <td><?php echo $row['l_name']; ?></td>
+                                        <td><?php echo $row['email']; ?></td>
+                                        <td><?php echo $row['m_no']; ?></td>
                                         </tr>
-                                        <?php
-                                                    }
-                                                }
-                                            }
-                                        ?>   ends here-->
+                                    <?php                
+                                    }
+                                  } 
+
+                                  ?>
                                     </tbody>
                                 </table>
                             </div>

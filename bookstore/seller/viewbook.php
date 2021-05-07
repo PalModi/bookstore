@@ -50,7 +50,7 @@
                 </li>
                 
                 <li class="active">
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Manage Staionary</a>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Manage Stationary</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
                             <a href="addstationary.php">Add Stationary</a>
@@ -109,7 +109,7 @@
                                             <tr>
                                                 
                                                 <td><?php echo $row['book_name']?></td>
-                                                <td><img src="<?php echo 'http://localhost/bookstore/'.$row['book_pic']?>" width="50" height="50"></td>
+                                                <td><img src="<?php echo 'http://localhost/bookstore/bookstore/'.$row['book_pic']?>" width="50" height="50"></td>
                                                 <td><?php echo $row['descryption']?></td>
                                                 <td><?php echo $row['price']?></td>
                                                 <td><?php echo $row['publisher']?></td>

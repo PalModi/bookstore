@@ -43,7 +43,7 @@ $book_price=$_POST['book_price'];
         }
 
         $sql = "INSERT INTO `book_tbl`( `book_name`, `isbn_no`, `seller_id`, `stock`, `descryption`, `availability`, `book_pic`, `price`, `publisher`) 
-        VALUES ('$book_name','$isbn_no','0','1','$book_desc','','$target_file','$book_price','$publisher')";
+        VALUES ('$book_name','$isbn_no','1','1','$book_desc','','$target_file','$book_price','$publisher')";
         
         if (mysqli_query($conn, $sql)) {
           echo "New record created successfully";

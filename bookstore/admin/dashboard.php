@@ -75,31 +75,22 @@
         <!-- Page Content  -->
         <div id="content">
             <div>
-                <div">
+                <div>
                <?php
                $qry="SELECT * FROM `user_tbl` WHERE user_type='0'";
                   $rs = mysqli_query($conn,$qry);
-                  if (mysqli_num_rows($rs)>0) 
-                  {
-                      while ($row=mysqli_fetch_assoc($rs)) 
-                      {
-                        $rs = mysqli_query($conn,$qry);
-                        ?>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h1>Dashboard-
-                                 <?php echo $row['f_name']; echo " "; echo $row['l_name'] ?> 
+                  $row=mysqli_fetch_assoc($rs);
+
+
+                  ?>                
+                      <div class="row">
+                         <div class="col-md-12">
+                             <h1>Dashboard -
+                                <?php echo $row['f_name']; echo " "; echo $row['l_name'] ?> 
                             </h1>
-                        </div>
                     </div>
-
-
-                    <!-- PHP CODE TO GET DATA FROM USER_TBL -->
-                      <!-- <?php  
-                      //   $qry="SELECT * FROM 'user_tbl'";
-                     //    $rs=mysqli_query($conn,$qry);
-                    //  ?> -->
-
+                    </div>
+                     <hr> <br>
                     <div>
                         <div>
                         <h3> All Sellers
@@ -114,38 +105,82 @@
                                             <th>Last Name</th>
                                             <th>Email</th>
                                             <th>Mobile</th>
+                                            <th>Remove</th>
                                         </tr>
 
                                         </thead>
                                     <tbody>
-                                    <!-- <?php
-                                     $qry="SELECT * FROM `user_tbl` WHERE user_type='1'";
-                                        $rs = mysqli_query($conn,$qry);
-                                        if (mysqli_num_rows($rs)>0) 
-                                        {
-                                            while ($row=mysqli_fetch_assoc($rs)) 
-                                            $rs = mysqli_query($conn,$qry);
-                                      {
-                                        ?> -->
-                                    <!-- <tr>
-                                            <td><?php echo $row['f_name']; ?></td>
-                                            <td><?php echo $row['l_name']; ?></td>
-                                            <td><?php echo $row['email']; ?></td>
-                                            <td><?php echo $row['m_no']; ?></td>
-                                        </tr> -->
+                                    <?php
+                                  $qry="SELECT * FROM `user_tbl` WHERE user_type='1'";
+                                  $rs = mysqli_query($conn,$qry);
+                                  if (mysqli_num_rows($rs)>0)
+                                  {
+                                    while ($row=mysqli_fetch_assoc($rs)) 
+                                    {
+                                        ?>
+                                        <tr>
+                                        <td><?php echo $row['f_name']; ?></td>
+                                        <td><?php echo $row['l_name']; ?></td>
+                                        <td><?php echo $row['email']; ?></td>
+                                        <td><?php echo $row['m_no']; ?></td>
+                                        <td><a href="deleteseller.php?user_name=<?php echo $row['user_name'] ?>">remove</a></td> 
+                                        </tr>
+                                        
+                                    <?php                
+                                    }
+                                  }
+                                  
+                                  ?>
+                                  </tbody>
+                                    </table>
+
+                                    </div>
+                     <br><hr> <br>
+                    <div>
+                        <div>
+                        <h3> All Buyers
+                            </h3>
+                        </div>
+                                        <table class="table table-striped table-bordered table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th>First Name</th>
+                                            <th>Last Name</th>
+                                            <th>Email</th>
+                                            <th>Mobile</th>
+                                            <th>Remove</th>
+                                        </tr>
+
+                                        </thead>
+                                        <tbody>
                                         <?php
-                                                    
-                                                }
-                                            }
-                                        ?>  
+                                        $qry="SELECT * FROM `user_tbl` WHERE user_type='2'";
+                                        $rs = mysqli_query($conn,$qry);
+                                        if (mysqli_num_rows($rs)>0)
+                                            {
+                                             while ($row=mysqli_fetch_assoc($rs)) 
+                                            {
+                                        ?>
+                                        <tr>
+                                        <td><?php echo $row['f_name']; ?></td>
+                                        <td><?php echo $row['l_name']; ?></td>
+                                        <td><?php echo $row['email']; ?></td>
+                                        <td><?php echo $row['m_no']; ?></td>
+                                        <td><a href="deletebuyer.php?user_name=<?php echo $row['user_name'] ?>">remove</a></td> 
+                                        </tr>
+                                    <?php                
+                                    }
+                                  } 
+
+                                  ?>
                                     </tbody>
-                                </table>
+                                    </table>                                  
                             </div>
                         </div>
+
                     </div>
                     <?php
-                         }
-                     }
+                         
                  
              ?>                    
 

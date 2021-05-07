@@ -14,3 +14,12 @@ if(!$conn)
 $db=mysqli_select_db($conn,$dbname);
 
 ?>
+    <script>
+    
+    function myFunction() {
+         alert("Book Succesfully added").click();    
+    }
+	function myFunction2() {
+        alert("Stationary Succesfully purchased").click();
+      }
+</script> 

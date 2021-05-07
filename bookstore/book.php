@@ -38,8 +38,11 @@
                                                             
 
                         <div class="card" style="width: 18rem;">
-                                 <!-- <img class="card-img-top" src="images/banner1.jpg" alt="Card image cap"> -->
-                                 <a href="shopbook.php?id=<?php echo $row['id'];?>"><img class="card-img-top" src="<?php echo $row['book_pic'];?>" alt="<?php echo $row['book_name']; ?>"></a> 
+                                 <a href="shopbook.php?book_id=
+                                 <?php echo $row['book_id'];?>">
+                                 <img class="card-img-top" src="<?php echo $row['book_pic'];?>" />
+                                 
+                                 </a> 
 
                                  <div class="card-body">
                                    <h5 class="card-title"><?php echo $row['book_name'];?></h5>
@@ -51,27 +54,6 @@
                                  </div>
                                  
                                    </div>
-
-
-
-                            <!-- <div class="new_pro_box">
-
-                                <div class="new_pro_img">
-                                    <a href="shop-single.php?id=<?php echo $row['book_id']; ?>">
-                                        <img src="admin/<?php echo $row['book_pic'];?>" height="230" width="360"> 
-                                    </a>
-                                </div>    
-                                <div class="new_pro_data">
-                                    <h3><a href="shop-single.php?id=<?php echo $row['book_id']; ?>"><?php echo $row['book_name']?></a></h3>
-                                    <p style="height: 130px;"><?php echo $row['descryption']?></p>
-                                    <span class="pro_price">Rs. <?php echo $row['price']?></span>
-                                    
-                                    <span class="cart_icon"><a href="addtocart.php?ct=2&id="><i class="fa fa-cart-plus" aria-hidden="true"></i></a></span>
-                                 
-                       
-                                </div>
-                            </div> -->
-                            
                         </div>
 
                         <?php
@@ -81,5 +63,6 @@
                                                 ?>
     </div>
 </div>
+
     </body>
 </html>

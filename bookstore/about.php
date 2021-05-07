@@ -32,9 +32,9 @@ session_start();
                 <div class="col-6">
                 <div class="hm_about_data">
                             <h1><span class="hm_color">Welcome</span> To Student Stack</h1>
-                            This website is one of the most popular catalogs online for textbooks.A one-stop e-commerce search engine, it connects buyers directly to the original seller, without taking a cut for themselves.
+                            This website is one of the most popular catalogs online for textbooks and stationary.A one-stop e-commerce search engine, it connects buyers directly to the original seller, without taking a cut for themselves.
                              <br>
-                            This website is great for buying rare, out-of-print or older editions of a book, as the website is run by book lovers who vaue old books.</p>
+                            This website is great for buying rare, out-of-print or older editions of a book, as the website is run by book lovers who value old books.</p>
                         </div>
                 </div>
             </div>
